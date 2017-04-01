@@ -1,0 +1,38 @@
+sample code
+
+## Home Page 
+-- Determing whether to show a slideshow or a single image
+
+@if($products->count() >= 5)
+	<div id="slidr-div" style="dislay: block">
+	@foreach($products as $product)
+		
+			<div class="front-image-full" data-slidr="{{$product->id}}">
+				<div class="image" style="background-image: url('{{ asset('images/'.$product->images()->first()->image_front_page) }}');"></div>
+				<div class="title">
+					<div class="border-top"></div>
+					<div class="image-title">
+						<a href="#">
+							{{$product->name}}
+							<span>View Details</span>
+						</a>
+					</div>
+				</div>	
+			</div>
+		
+	@endforeach
+	</div>
+@else
+	<div class="front-image-full">
+		<div class="image" style="background-image: url('{{ asset('images/'.$products->first()->images()->first()->image_front_page) }}');"></div>
+		<div class="title">
+			<div class="border-top"></div>
+			<div class="image-title">
+				<a href="#">
+					{{$products->first()->name}}
+					<span>View Details</span>
+				</a>
+			</div>
+		</div>	
+	</div>
+@endif

@@ -1,0 +1,17 @@
+<fieldset>
+    <div class="form-group">
+        {!! Form::label('blurb', 'Blurb', ['class' => 'control-label col-sm-2']) !!}
+        <div class="col-sm-10">
+            {!! Form::textarea('blurb', null, ['class' => 'form-control']) !!}
+            <span class="help-block">Create a short blurb that expresses your mood or overall belief / motto / mission statement.</span>
+        </div>
+    </div>
+</fieldset>
+
+<fieldset>
+	<div class="form-group">
+		<div class="col-sm-10 col-sm-offset-2" style="margin-top: 20px;">
+			{!! Form::submit($title, ['class' => 'btn btn-fill btn-info pull-right']) !!}
+		</div>
+	</div>
+</fieldset>

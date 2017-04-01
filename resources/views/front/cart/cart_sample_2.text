@@ -1,0 +1,104 @@
+<div class="row" id="checkout-orders">
+
+	<div class="checkout__cart">
+        <div class="small-12 medium-10 medium-centered columns">
+            <h2>Your order</h2>
+        </div>
+
+        <div class="small-12 medium-10 medium-centered columns hide-for-small">
+            <h3 class="hide-for-small-only medium-5 columns text-left">Product</h3>
+            <h4 class="small-7 medium-offset-0 medium-2 columns text-left">Size</h4>
+            <h4 class="small-2 medium-2 columns text-left padleft">Qty</h4>
+            <h4 class="small-3 medium-2 columns text-right">Price</h4>
+        </div>
+        <div class="small-12 medium-10 medium-offset-1 columns">
+            <hr class="fat">
+        </div>
+
+
+
+        <div class="small-12 medium-10 medium-centered columns checkout-product">
+            <div class="small-4 medium-2 columns">
+                <figure class="product-image">
+                    <img src="https://www.etq-amsterdam.com/app/uploads/2017/03/etq-amsterdam-low-2-tonal-pink-haze-virtus-side-140x0-c-default.jpg">
+                </figure>
+            </div>
+
+            <p class="small-8 medium-3 columns text-left elipsis product-name">Low 2 Tonal Pink Haze</p>
+
+            <p class="small-8 medium-2 columns text-left elipsis">EU 43 | US 10 | UK 9</p>
+
+            <div class="small-8 medium-5 columns padleft">
+                <p class="small-6 medium-6 columns text-left">1</p>
+                <p class="small-6 medium-6 columns text-right" style="float: right;">€ 245.00</p>
+            </div>
+        </div>
+
+
+        <div class="small-12 medium-10 medium-offset-1 columns hide-for-small">
+            <hr class="hide-for-small fat">
+            <hr class="hide-for-medium-up">
+        </div>
+
+        <div class="hide-for-medium-up small-12 columns">
+            <hr class="fat">
+        </div>
+
+        <div class="small-12 medium-5 medium-offset-1 columns coupon-column">
+            <div class="small-12 medium-12 medium-offset-0 columns">
+                <label class="inline">
+                    <div class="icheck">
+                        <input type="checkbox" class="checkout__coupon-toggle" name="has_coupon" id="has_coupon" value="1" style="position: absolute; opacity: 0;">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                    </div> I have a coupon code
+                </label>
+                <div data-action="https://www.etq-amsterdam.com/cart/" id="coupon-form" class="checkout__coupon-form hide">
+                    <input type="text" id="coupon_code" name="coupon_code" class="cleaninput">
+                    <input type="hidden" name="apply_coupon" value="Apply Coupon">
+                    <input type="hidden" name="update_cart" value="Update Cart">
+                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="958ee87394"><input type="hidden" name="_wp_http_referer" value="/checkout/?wc-ajax=update_order_review">
+                    <span id="submit-couponcode" name="submit-couponcode" class="checkout__btn-apply-coupon cleaninput">APPLY</span>
+                </div>
+                <div class="coupon_error ui-coupon-form-error" style="color: #D9313E;"></div>
+            </div>
+            <div class="small-4 columns couponcode ng-hide">
+                <button id="coupon-add">Submit</button>
+            </div>
+
+            <div class="small-12 medium-12 medium-offset-0 columns">
+                <label class="inline">
+                    <div class="icheck">
+                        <input type="checkbox" name="newsletter" value="yes" style="position: absolute; opacity: 0;">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                    </div>
+                    Subscribe to our newsletter
+                </label>
+            </div>
+        </div>
+
+        <div class="small-12 medium-5 medium-offset-1 columns continue-column">
+            <div class="small-12 medium-10 medium-offset-0 columns">
+                <p class="sum">Subtotal <span class="value">€ 245.00</span></p>
+            </div>
+            <div class="small-12 medium-10 medium-offset-0 columns" style="height: 0;">
+                <hr>
+            </div>
+        
+            <div class="small-12 medium-10 medium-offset-0 columns">
+                <p class="sum">Shipping <span class="value">FREE</span></p>
+                <hr class="fat" style="border-bottom: 2px solid black">
+                <p class="sum fat">Grand total <span class="value">€ 245.00 </span></p>
+            </div>
+        </div>
+    </div>
+	<div class="small-12 medium-5 medium-offset-7 columns continue-column">
+		<div class="small-12 medium-10 medium-offset-0 columns">
+			<hr>
+			<small class="terms">By proceeding I accept the <a href="/service-desk/#terms-conditions" target="_blank">Terms &amp; conditions</a></small>
+			<button id="onestepcheckout-place-order" type="submit" class="onestepcheckout-place-order ui-submit-checkout">
+				<span><strong>Continue to Payment</strong></span>
+				<span class="hover"><strong>Continue to Payment</strong></span>
+			</button>
+		</div>
+	</div>
+</div>
