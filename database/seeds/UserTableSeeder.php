@@ -17,6 +17,7 @@ class UserTableSeeder extends Seeder
             'slug' => 'jonathan-brown',
             'email' => 'jbrown@email.com',
             'password' => bcrypt('secret'),
+            'cell_phone' => '12253889871'
         ]);
     }
 }
