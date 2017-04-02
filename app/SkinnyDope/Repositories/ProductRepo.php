@@ -26,7 +26,7 @@ class ProductRepo implements ProductInterface{
 	}
 
 	public function getRecords(){
-		$products = $this->product->with('images')->orderBy('created_at', 'desc')->get();
+		$products = $this->product->with('images')->orderBy('created_at', 'desc')->paginate(10);
 		return $products;
 	}
 

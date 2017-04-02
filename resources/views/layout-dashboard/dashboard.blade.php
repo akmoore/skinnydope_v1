@@ -42,13 +42,13 @@
         -->
 
         <div class="logo">
-            <a href="http://www.creative-tim.com" class="logo-text">
-                Creative Tim
+            <a href="{{route('dashboard')}}" class="logo-text">
+                Skinny Dope
             </a>
         </div>
 		<div class="logo logo-mini">
-			<a href="http://www.creative-tim.com" class="logo-text">
-				Ct
+			<a href="{{route('dashboard')}}" class="logo-text">
+				SD
 			</a>
 		</div>
 
@@ -75,12 +75,12 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="#">
+                    <a href="{{route('products.index')}}">
                         <i class="pe-7s-graph"></i>
-                        <p>Single Link</p>
+                        <p>Products</p>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a data-toggle="collapse" href="#componentsExamples">
                         <i class="pe-7s-plugin"></i>
                         <p>Menu with links
@@ -94,7 +94,7 @@
                             <li><a href="#">Link 3</a></li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
 
             </ul>
     	</div>
@@ -234,16 +234,16 @@
                 <nav class="pull-left">
                     <ul>
                         <li>
-                            <a href="#">
+                            <!-- <a href="#">
                                 Home
-                            </a>
+                            </a> -->
                         </li>
 
                         <!--        here you can add more links for the footer                       -->
                     </ul>
                 </nav>
                 <p class="copyright pull-right">
-                    &copy; 2016 <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                    &copy; {{ \Carbon\Carbon::now()->year}} <a href="{{ route('dashboard')}}">Skinny Dope</a>
                 </p>
             </div>
         </footer>

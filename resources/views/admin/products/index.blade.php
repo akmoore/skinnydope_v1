@@ -66,7 +66,11 @@
 	                        @endforeach
 	                    </tbody>
 	                </table>
+	                <div>
+		            	{{$products->links()}}
+		            </div>
 	            </div>
+	            
 	        </div><!--  end card  -->
     	@endif
         
