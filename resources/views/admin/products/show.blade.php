@@ -12,7 +12,7 @@
 		        <div class="content">
 		        	<div class="img-container">
                         <!-- <img src="../../assets/img/blog-1.jpg" alt="..."> -->
-                        <img src="{{asset('images/'.$product->images()->first()->image_medium)}}" 
+                        <img src="{{asset('/storage/images/'.$product->images()->first()->image_medium)}}" 
                         	 alt="..."
                         	 style="max-width: 100%;">
                     </div>
@@ -27,6 +27,7 @@
 		        </div>
 		        <div class="content">
 		        	<ul class="list-group">
+		        		<li class="list-group-item"><b>Year:</b> {{$product->year}} inches</li>
 		        	  	<li class="list-group-item"><b>Width:</b> {{$product->width}} inches</li>
 		        	  	<li class="list-group-item"><b>Height:</b> {{$product->height}} inches</li>
 		        	  	<li class="list-group-item"><b>Depth:</b> {{$product->depth}} inches</li>

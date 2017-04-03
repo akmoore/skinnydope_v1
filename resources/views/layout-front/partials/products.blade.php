@@ -5,16 +5,16 @@
 				@if($product->type === 'illustration')
 					<a href="{{route('front.illustration', $product)}}" class="ppane-product" data-tilt>
 					   <div class="image"
-					   		style="background-image: url('{{ asset('/images/'.$product->images()->first()->image_medium) }}');">
+					   		style="background-image: url('{{ asset('/storage/images/'.$product->images()->first()->image_medium) }}');">
 					   </div>
 					   <div class="detail">
 					   		{{$product->name}}
 					   </div>
 					</a>
 				@else
-					<a href="{{route('front.painting', $product)}}" class="ppane-product">
+					<a href="{{route('front.painting', $product)}}" class="ppane-product" data-tilt>
 					   <div class="image"
-					   		style="background-image: url('{{ asset('/images/'.$product->images()->first()->image_medium) }}');">
+					   		style="background-image: url('{{ asset('/storage/images/'.$product->images()->first()->image_medium) }}');">
 					   </div>
 					   <div class="detail">
 					   		{{$product->name}}

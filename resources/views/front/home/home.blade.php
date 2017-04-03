@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="front-image-full">
-		<div class="image" style="background-image: url('{{ asset('images/'.$products->first()->images()->first()->image_front_page) }}');"></div>
+		<div class="image" style="background-image: url('{{ asset('storage/images/'.$products->first()->images()->first()->image_front_page) }}');"></div>
 		<div class="title">
 			<div class="border-top"></div>
 			<div class="image-title">

@@ -34,7 +34,7 @@
 		                        <tr>
 		                            <td>
 		                                <div class="img-container">
-		                                    <img src="{{asset('images/'.$product->images()->first()->image_thumb)}}" alt="...">
+		                                    <img src="{{asset('/storage/images/'.$product->images()->first()->image_thumb)}}" alt="...">
 		                                </div>
 		                            </td>
 		                            <td >{{$product->name}}</td>
