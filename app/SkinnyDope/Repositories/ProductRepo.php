@@ -76,7 +76,8 @@ class ProductRepo implements ProductInterface{
 			'quantity' => $request->quantity,
 			'type' => $request->type,
 			'active' => $request->isMethod('put') || $request->isMethod('patch') ? $request->active : 1,
-			'description' => $request->description
+			'description' => $request->description,
+			'year' => $request->year
 		];
 	}
 
