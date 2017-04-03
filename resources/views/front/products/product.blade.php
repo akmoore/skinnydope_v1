@@ -4,9 +4,9 @@
 	<div class="ppage-main">
 		<div class="ppage-image">
 			<div class="image-container">
-				<img src="{{ asset('/images/'.$art->images()->first()->image_medium) }}"
+				<img src="{{ asset('/storage/images/'.$art->images()->first()->image_medium) }}"
 					 class="intense js-tilt" 
-					 data-image="{{ asset('/images/'.$art->images()->first()->image_large) }}" 
+					 data-image="{{ asset('/storage/images/'.$art->images()->first()->image_large) }}" 
 					 >
 			</div>
 		</div>
