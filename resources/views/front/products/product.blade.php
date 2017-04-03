@@ -17,10 +17,7 @@
 			<p>{{$art->width}}" width | {{$art->height}}" height | {{$art->depth}}" depth</p>
 			<h6>Description</h6>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.
+				{{$art->description}}
 			</p>
 			<h6>Price</h6>
 			<p>${{$art->price}}</p>
