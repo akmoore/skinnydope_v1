@@ -28,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\SkinnyDope\Interfaces\CartInterface', 'App\SkinnyDope\Repositories\CartRepo');
         $this->app->bind('App\SkinnyDope\Interfaces\BlurbInterface', 'App\SkinnyDope\Repositories\BlurbRepo');
         $this->app->bind('App\SkinnyDope\Interfaces\EventInterface', 'App\SkinnyDope\Repositories\EventRepo');
+        $this->app->bind('App\SkinnyDope\Interfaces\UserInterface', 'App\SkinnyDope\Repositories\UserRepo');
     }
 }

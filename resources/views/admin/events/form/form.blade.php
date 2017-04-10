@@ -12,7 +12,11 @@
     <div class="form-group">
         {!! Form::label('date_time', 'Date and Time', ['class' => 'control-label col-sm-2']) !!}
         <div class="col-sm-10">
+            @if(is_active('events.edit'))
             {!! Form::text('date_time', $event->date_time->format('m/d/Y g:i A'), ['class' => 'form-control datetimepicker']) !!}
+            @else
+            {!! Form::text('date_time', null, ['class' => 'form-control datetimepicker']) !!}
+            @endif
             <span class="help-block">Date and time of the event.</span>
         </div>
     </div>
@@ -36,6 +40,18 @@
         </div>
     </div>
 </fieldset>
+
+@if(is_active('events.edit'))
+<fieldset>
+    <div class="form-group">
+        {!! Form::label('viewable', 'Viewable', ['class' => 'control-label col-sm-2']) !!}
+        <div class="col-sm-10">
+            {!! Form::select('viewable', [1 => 'Yes', 2 => 'No'] ,null, ['class' => 'form-control']) !!}
+            <span class="help-block">Determine if this event can be viewed.</span>
+        </div>
+    </div>
+</fieldset>
+@endif
 
 <fieldset>
     <div class="form-group">

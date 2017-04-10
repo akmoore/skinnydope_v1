@@ -13,6 +13,10 @@
 		<div class="ppage-details">
 			<div class="border-top"></div>
 			<p class="image-title">{{$art->name}}</p>
+			@if($art->year)
+				<h6>Year</h6>
+				<p>{{$art->year}}</p>
+			@endif
 			<h6>Demensions</h6>
 			<p>{{$art->width}}" width | {{$art->height}}" height | {{$art->depth}}" depth</p>
 			<h6>Description</h6>

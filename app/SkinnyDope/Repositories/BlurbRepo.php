@@ -54,7 +54,8 @@ class BlurbRepo implements BlurbInterface{
 
 	private function modelFields($request){
 		return [
-			'blurb' => $request->blurb
+			'blurb' => $request->blurb,
+			// 'viewable' => $request->isMethod('put') || $request->isMethod('patch') ? $request->viewable : 1,
 		];
 	}
 }

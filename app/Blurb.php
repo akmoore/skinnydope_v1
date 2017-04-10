@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Blurb extends Model
 {
     protected $fillable = [
-    	'blurb'
+    	'blurb', 'viewable'
     ];
 }

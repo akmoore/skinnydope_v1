@@ -28,24 +28,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
+Route::group([ 'middleware' => 'auth', 'prefix' => 'dashboard'], function(){
 	Route::get('/', ['as' => 'dashboard', 'uses' => 'Admin\DashboardController@index']);
 	Route::resource('products', 'Admin\ProductController');
 	Route::resource('blurbs', 'Admin\BlurbController');
 	Route::resource('events', 'Admin\EventController');
+	Route::get('/profile', ['as' => 'profile', 'uses' => 'Admin\ProfileController@show']);
+	Route::put('/profile/{user}', ['as' => 'profile.update', 'uses' => 'Admin\ProfileController@update']);
+	Route::patch('/profile/{user}', ['as' => 'profile.update', 'uses' => 'Admin\ProfileController@update']);
+	Route::get('/profile/logout', ['as' => 'profile.logout', 'uses' => 'Admin\ProfileController@logout']);
 });
 
-
-
-// Route::get('user', function(){
-// 	$user = new \App\User();
-// 	$user->first_name = "Alfred";
-// 	$user->last_name = "Moore";
-// 	// $user->slug = 'alfred-moore';
-// 	$user->email = "ak_moore@live.com";
-// 	$user->password = bcrypt('password');
-// 	$user->cell_phone = '12252889870';
-// 	$user->save();
-
-// 	return $user;
-// });

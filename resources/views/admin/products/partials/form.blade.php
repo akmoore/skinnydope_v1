@@ -71,6 +71,18 @@
     </div>
 </fieldset>
 
+@if(Route::current()->getName() == 'products.edit')
+    <fieldset>
+        <div class="form-group">
+            {!! Form::label('active', 'Active', ['class' => 'control-label col-sm-2']) !!}
+            <div class="col-sm-10">
+                {!! Form::select('active', [1 => 'Yes', 0 => 'No'], null, ['class' => 'form-control']) !!}
+                <span class="help-block">Select whether or not you want visitors to see this product.</span>
+            </div>
+        </div>
+    </fieldset>
+@endif
+
 <fieldset>
     <div class="form-group">
         <!-- <label class="col-sm-2 control-label">Checkboxes and radios</label> -->
@@ -102,6 +114,9 @@
         {!! Form::label('image', 'Image', ['class' => 'control-label col-sm-2']) !!}
         <div class="col-sm-10">
             {!! Form::file('image', ['class' => 'form-control file']) !!}
+            @if(Route::current()->getName() == 'products.edit')
+                <span class="help-block">Adding an image here will replace the current image for this product.</span>
+            @endif
         </div>
     </div>
 </fieldset>

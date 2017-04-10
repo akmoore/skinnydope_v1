@@ -16,6 +16,7 @@ class CreateBlurbsTable extends Migration
         Schema::create('blurbs', function (Blueprint $table) {
             $table->increments('id');
             $table->text('blurb');
+            $table->boolean('viewable')->default(1);
             $table->timestamps();
         });
     }

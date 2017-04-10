@@ -47,20 +47,24 @@
 		                            <td >{{ucfirst($product->type)}}</td>
 		                            <td class="td-actions">
 		                            	<a href="/dashboard/products/{{$product->id}}"
-		                            	   type="button" rel="tooltip" data-placement="left" title="View Post" class="btn btn-info btn-simple btn-icon">
+		                            	   type="button" rel="tooltip" data-placement="left" title="View Product" class="btn btn-info btn-simple btn-icon">
 		                            	   <i class="fa fa-image"></i>
-		                            		<!-- <button type="button" rel="tooltip" data-placement="left" title="View Post" class="btn btn-info btn-simple btn-icon">
-		                            		    <i class="fa fa-image"></i>
-		                            		</button> -->
 		                            	</a>
-		                                
-		                                <!-- <a href="{{link_to_route('products.show', null, $product->id)}}" rel="tooltip" data-placement="left" title="View Post" class="btn btn-info btn-simple btn-icon"><i class="fa fa-image"></i></a> -->
-		                                <button type="button" rel="tooltip" data-placement="left" title="Edit Post" class="btn btn-success btn-simple btn-icon">
+		                            	<a href="{{ route('products.edit', $product->id)}}"
+		                            	   type="button" rel="tooltip" data-placement="left" title="Update Product" class="btn btn-success btn-simple btn-icon">
+		                            	   <i class="fa fa-edit"></i>
+		                            	</a>
+		                                <!-- <button type="button" rel="tooltip" data-placement="left" title="Edit Post" class="btn btn-success btn-simple btn-icon">
 		                                    <i class="fa fa-edit"></i>
-		                                </button>
-		                                <button type="button" rel="tooltip" data-placement="left" title="Remove Post" class="btn btn-danger btn-simple btn-icon ">
+		                                </button> -->
+		                                <!-- <button type="button" rel="tooltip" data-placement="left" title="Remove Post" class="btn btn-danger btn-simple btn-icon ">
 		                                    <i class="fa fa-times"></i>
-		                                </button>
+		                                </button> -->
+                                		{!! Form::model($product, ['route' => ['products.destroy', $product->id],'method' => 'delete', 'style' => 'display:inline-block;']) !!}
+                        					<button type="submit" rel="tooltip" data-placement="left" title="Remove Product" class="btn btn-danger btn-simple btn-icon">
+                        						<i class="fa fa-times"></i>
+                        					</button>
+                        				{!! Form::close() !!}
 		                            </td>
 		                        </tr>
 	                        @endforeach

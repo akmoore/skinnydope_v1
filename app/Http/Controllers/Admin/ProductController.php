@@ -35,24 +35,29 @@ class ProductController extends Controller
         return redirect()->route('products.show', $product)->with('message', 'Product successfully created.');
     }
 
+    public function edit($id){
+        $product = $this->product->getRecord($id);
+        return view('admin.products.edit', compact('product'));
+    }
+
     public function show($id)
     {
         $product = $this->product->getRecord($id);
         if($product) return view('admin.products.show', compact('product'));
-        return redirect()->route('products.index')->with('message', 'Product does not exist.');
+        return redirect()->route('products.index')->with('error', 'Product does not exist.');
     }
 
     public function update(Request $request, $id)
     {
         $product = $this->product->updateRecord($request, $id);
-        if($product) return response()->json($product, 200);
-        return response()->json(['error' => 'product does not exist.'], 404);
+        if($product) return redirect()->route('products.show', $product)->with('message', $product->name . ' was successfully updated.');
+        return redirect()->route('products.index')->with('error', 'Was not able to update the product.');
     }
 
     public function destroy($id)
     {
         $product = $this->product->deleteRecord($id);
-        if($product) return response()->json(['message' => $product->name . ' was successfully deleted.'], 200);
-        return response()->json(['error' => 'Unable to delete, product does not exist.'], 404);
+        if($product) return redirect()->route('products.index')->with('message', $product->name . ' was successfully deleted.');
+        return redirect()->route('products.index')->with('error', 'Was not able to delete the product.');
     }
 }

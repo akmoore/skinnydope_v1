@@ -24,6 +24,7 @@ class CreateEventsTable extends Migration
             $table->string('state')->nullable();
             $table->integer('postal')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('viewable')->default(1);
             $table->timestamps();
         });
     }

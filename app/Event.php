@@ -12,7 +12,8 @@ class Event extends Model
     protected $fillable = [
     	'title', 'slug', 'date_time', 
     	'building_title', 'street', 'city',
-    	'state', 'postal', 'description'
+    	'state', 'postal', 'description',
+        'viewable'
     ];
 
     protected $appends = ['address'];

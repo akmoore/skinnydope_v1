@@ -27,7 +27,7 @@
 		        </div>
 		        <div class="content">
 		        	<ul class="list-group">
-		        		<li class="list-group-item"><b>Year:</b> {{$product->year}} inches</li>
+		        		<li class="list-group-item"><b>Year:</b> {{$product->year}} </li>
 		        	  	<li class="list-group-item"><b>Width:</b> {{$product->width}} inches</li>
 		        	  	<li class="list-group-item"><b>Height:</b> {{$product->height}} inches</li>
 		        	  	<li class="list-group-item"><b>Depth:</b> {{$product->depth}} inches</li>
@@ -38,6 +38,12 @@
 		        	  	<li class="list-group-item"><b>Orientation:</b> {{$product->portrait ? 'Portrait' : 'Landscape'}}</li>
 		        	  	<li class="list-group-item"><b>Description:</b> <br> {{$product->description ? $product->description : 'N/A'}}</li>
 		        	</ul>
+		        	<div style="padding: 0px 10px;">
+		  				<a href="{{ route('products.edit', $product->id) }}" class="btn btn-fill btn-info" style="margin-right:10px;">Update</a>
+	            		{!! Form::model($product, ['route' => ['products.destroy', $product->id],'method' => 'delete', 'style' => 'display:inline-block;']) !!}
+	    					{!! Form::submit('Delete', ['class' => 'btn btn-fill btn-danger']) !!}
+	    				{!! Form::close() !!}
+	            	</div>
 		        </div>
 		   	</div>
 		</div>

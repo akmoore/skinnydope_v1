@@ -49,8 +49,8 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         $event = $this->event->updateRecord($request, $id);
-        if($event) return view('admin.events.show', compact('event'));
-        return redirect()->route('events.index')->with('message', 'event does not exist.');
+        if($event) return redirect()->route('events.show', $event)->with('message', $event->title . ' was successfully updated.');
+        return redirect()->route('events.index')->with('error', 'event does not exist.');
     }
 
     public function destroy($id)
