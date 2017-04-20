@@ -21,7 +21,8 @@ class ProductController extends Controller
     	// the information is on the right of the page
     	// there is an add to cart button (consider using vue.js for this function)
     	// if($product->type === 'illustration') return view('front.')
-    	return view('front.products.product', compact('art'));
+        if($art) return view('front.products.product', compact('art'));
+    	return abort(404);
     	return 'hello';
     }
 
