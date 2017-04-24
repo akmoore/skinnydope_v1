@@ -17,7 +17,10 @@ class ProductRepo implements ProductInterface{
 	}
 
 	public function randomRecords(){
-		return $this->product->with('images')->get()->random(1);
+		if($this->product->get()->count()){
+			return $this->product->with('images')->get()->random(1);
+		}
+		return collect([]);
 		// if($this->product->count() >= 5){
 		// 	return $this->product->with('images')->get()->random(5);
 		// }else{

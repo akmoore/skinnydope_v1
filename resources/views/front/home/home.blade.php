@@ -1,25 +1,27 @@
 @extends('layout-front.front')
 
 @section('content')
-	<div class="front-image-full">
-		<div class="image" style="background-image: url('{{ asset('storage/images/'.$products->first()->images()->first()->image_front_page) }}');"></div>
-		<div class="title">
-			<div class="border-top"></div>
-			<div class="image-title">
-				@if($products->first()->type == 'painting')
-					<a href="{{route('front.painting', $products->first()->id)}}">
-						{{$products->first()->name}}
-						<span>View Details</span>
-					</a>
-				@else
-					<a href="{{route('front.illustration', $products->first()->id)}}">
-						{{$products->first()->name}}
-						<span>View Details</span>
-					</a>
-				@endif
-			</div>
-		</div>	
-	</div>
+	@if($products != collect([]))
+		<div class="front-image-full">
+			<div class="image" style="background-image: url('{{ asset('storage/images/'.$products->first()->images()->first()->image_front_page) }}');"></div>
+			<div class="title">
+				<div class="border-top"></div>
+				<div class="image-title">
+					@if($products->first()->type == 'painting')
+						<a href="{{route('front.painting', $products->first()->id)}}">
+							{{$products->first()->name}}
+							<span>View Details</span>
+						</a>
+					@else
+						<a href="{{route('front.illustration', $products->first()->id)}}">
+							{{$products->first()->name}}
+							<span>View Details</span>
+						</a>
+					@endif
+				</div>
+			</div>	
+		</div>
+	@endif
 	<!-- <div class="blurb">
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

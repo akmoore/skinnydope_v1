@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 use App\Http\Controllers\Controller;
 use App\SkinnyDope\Interfaces\ProductInterface;
 
@@ -29,7 +30,7 @@ class ProductController extends Controller
         return view('admin.products.create');
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $product = $this->product->addRecord($request);
         return redirect()->route('products.show', $product)->with('message', 'Product successfully created.');
@@ -47,7 +48,7 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('error', 'Product does not exist.');
     }
 
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
         $product = $this->product->updateRecord($request, $id);
         if($product) return redirect()->route('products.show', $product)->with('message', $product->name . ' was successfully updated.');
