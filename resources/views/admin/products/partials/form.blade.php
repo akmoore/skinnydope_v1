@@ -111,7 +111,7 @@
     <div class="form-group">
         <!-- <label class="col-sm-2 control-label">Checkboxes and radios</label> -->
         {!! Form::label('type', 'Type', ['class' => 'control-label col-sm-2']) !!}
-        {!! Form::select('type', ['illustration' = 'Illustration', 'painting' = 'Painting'], null, ['class' => 'form-control']) !!}
+        {!! Form::select('type', ['illustration' => 'Illustration', 'painting' => 'Painting'], null, ['class' => 'form-control']) !!}
         @if($errors->has('type'))
             <span class="text-danger">{!! $errors->first('type') !!}</span>
         @endif
