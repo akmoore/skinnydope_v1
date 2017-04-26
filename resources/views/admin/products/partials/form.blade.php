@@ -1,4 +1,3 @@
-
 <fieldset>
     <div class="form-group">
         {!! Form::label('name', 'Product\'s Name *', ['class' => 'control-label col-sm-2']) !!}
@@ -121,6 +120,9 @@
                 <input type="radio" data-toggle="radio" name="type" value="painting">Painting
             </label>
         </div>
+        @if($errors->has('type'))
+            <span class="text-danger">{!! $errors->first('type') !!}</span>
+        @endif
     </div>
 </fieldset>
 
