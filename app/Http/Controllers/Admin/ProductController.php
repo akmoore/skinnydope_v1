@@ -48,8 +48,9 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('error', 'Product does not exist.');
     }
 
-    public function update(ProductRequest $request, $id)
+    public function update(Request $request, $id)
     {
+        return $request->all();
         $product = $this->product->updateRecord($request, $id);
         if($product) return redirect()->route('products.show', $product)->with('message', $product->name . ' was successfully updated.');
         return redirect()->route('products.index')->with('error', 'Was not able to update the product.');
