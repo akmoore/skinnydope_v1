@@ -111,15 +111,7 @@
     <div class="form-group">
         <!-- <label class="col-sm-2 control-label">Checkboxes and radios</label> -->
         {!! Form::label('type', 'Type', ['class' => 'control-label col-sm-2']) !!}
-        <div class="col-sm-10">
-            <label class="radio">
-                <input type="radio" data-toggle="radio" name="type" value="illustration">Illustration
-            </label>
-
-            <label class="radio">
-                <input type="radio" data-toggle="radio" name="type" value="painting">Painting
-            </label>
-        </div>
+        {!! Form::select('type', ['illustration' = 'Illustration', 'painting' = 'Painting'], null, ['class' => 'form-control']) !!}
         @if($errors->has('type'))
             <span class="text-danger">{!! $errors->first('type') !!}</span>
         @endif
