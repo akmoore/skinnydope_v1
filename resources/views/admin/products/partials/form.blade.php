@@ -114,7 +114,7 @@
         {!! Form::label('type', 'Type', ['class' => 'control-label col-sm-2']) !!}
         <div class="col-sm-10">
             <label class="radio">
-                <input type="radio" data-toggle="radio" name="type" value="illustration" checked="">Illustration
+                <input type="radio" data-toggle="radio" name="type" value="illustration">Illustration
             </label>
 
             <label class="radio">
