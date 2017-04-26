@@ -37,10 +37,10 @@
 		                                    <img src="{{asset('/storage/images/'.$product->images()->first()->image_thumb)}}" alt="...">
 		                                </div>
 		                            </td>
-		                            <td >{{$product->name}}</td>
+		                            <td>{{$product->name}}</td>
 		                            <td>{{$product->quantity}}</td>
-		                            <td >${{$product->price}}</td>
-		                            <td >
+		                            <td>${{$product->price}}</td>
+		                            <td>
 		                            	<b>Original:</b> {{$product->original ? 'Yes' : 'No'}} <br>
 		                            	<b>Oreintation:</b> {{$product->images()->first()->portrait ? 'Portrait' : 'Landscape'}}
 		                            </td>
