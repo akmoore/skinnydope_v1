@@ -199,6 +199,33 @@
     <!-- Light Bootstrap Dashboard Core javascript and methods -->
 	<script src="/../assets/js/light-bootstrap-dashboard.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            @if (session('error'))
+              $.notify({
+                  icon: 'pe-7s-bell',
+                  message: {!! json_encode(session('error')) !!}
+
+              },{
+                  type: 'danger',
+                  timer: 4000
+              });
+            @endif
+
+            @if (session('message'))
+              $.notify({
+                  icon: 'pe-7s-bell',
+                  message: {!! json_encode(session('message')) !!}
+
+              },{
+                  type: 'success',
+                  timer: 4000
+              });
+            @endif
+        });
+    </script>
+
     @yield('scripts')
 
 	<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->

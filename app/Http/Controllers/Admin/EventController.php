@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\EventRequest;
 use App\Http\Controllers\Controller;
 use App\SkinnyDope\Interfaces\EventInterface;
 
@@ -24,7 +25,7 @@ class EventController extends Controller
         return view('admin.events.create');
     }
 
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {
     	// $date = $request->date_time;
     	// return \Carbon\Carbon::parse($request->date_time);
@@ -46,7 +47,7 @@ class EventController extends Controller
         return redirect()->route('events.index')->with('message', 'event does not exist.');
     }
 
-    public function update(Request $request, $id)
+    public function update(EventRequest $request, $id)
     {
         $event = $this->event->updateRecord($request, $id);
         if($event) return redirect()->route('events.show', $event)->with('message', $event->title . ' was successfully updated.');

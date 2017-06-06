@@ -1,19 +1,19 @@
 <ul class="nav">
     <li class="{{ active('products.*') }}">
         <a href="{{route('products.index')}}">
-            <i class="pe-7s-graph"></i>
+            <i class="pe-7s-albums"></i>
             <p>Products</p>
         </a>
     </li>
     <li class="{{ active('events.*') }}">
         <a href="{{route('events.index')}}">
-            <i class="pe-7s-graph"></i>
+            <i class="pe-7s-date"></i>
             <p>Events</p>
         </a>
     </li>
     <li class="{{ active('blurbs.*') }}">
         <a href="{{route('blurbs.index')}}">
-            <i class="pe-7s-graph"></i>
+            <i class="pe-7s-note"></i>
             <p>Blurbs</p>
         </a>
     </li>

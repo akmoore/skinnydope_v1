@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\BlurbRequest;
 use App\Http\Controllers\Controller;
 use App\SkinnyDope\Interfaces\BlurbInterface;
 
@@ -24,10 +25,10 @@ class BlurbController extends Controller
         return view('admin.blurbs.create');
     }
 
-    public function store(Request $request)
+    public function store(BlurbRequest $request)
     {
         $blurb = $this->blurb->addRecord($request);
-        return redirect()->route('blurbs.show', $blurb)->with('message', 'blurb successfully created.');
+        return redirect()->route('blurbs.show', $blurb)->with('message', 'Blurb successfully created.');
     }
 
     public function show($id)
@@ -43,10 +44,10 @@ class BlurbController extends Controller
         return redirect()->route('blurbs.index')->with('message', 'Blurb does not exist.');
     }
 
-    public function update(Request $request, $id)
+    public function update(BlurbRequest $request, $id)
     {
         $blurb = $this->blurb->updateRecord($request, $id);
-        if($blurb) return view('admin.blurbs.show', compact('blurb'));
+        if($blurb) return redirect()->route('blurbs.show', $blurb)->with('message', 'Blurb was successfully updated.');
         return redirect()->route('blurbs.index')->with('message', 'Blurb does not exist.');
     }
 

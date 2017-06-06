@@ -32,6 +32,8 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
+        // return $request->hasFile('image') ? 'true' : 'false';
+        if(!$request->hasFile('image')) return redirect()->back()->withInput()->with('error', 'Must include image when uploading products');
         $product = $this->product->addRecord($request);
         return redirect()->route('products.show', $product)->with('message', 'Product successfully created.');
     }
