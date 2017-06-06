@@ -18,7 +18,7 @@ class ProductRepo implements ProductInterface{
 
 	public function randomRecords(){
 		if($this->product->get()->count()){
-			return $this->product->with('images')->get()->random(1);
+			return $this->product->with('images')->where('active', 1)->get()->random(1);
 		}
 		return collect([]);
 		// if($this->product->count() >= 5){
@@ -30,7 +30,7 @@ class ProductRepo implements ProductInterface{
 	}
 
 	public function getRecords(){
-		$products = $this->product->with('images')->orderBy('created_at', 'desc')->paginate(10);
+		$products = $this->product->with('images')->where('active', 1)->orderBy('created_at', 'desc')->paginate(10);
 		return $products;
 	}
 
