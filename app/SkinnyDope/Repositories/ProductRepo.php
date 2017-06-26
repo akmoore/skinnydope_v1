@@ -30,7 +30,7 @@ class ProductRepo implements ProductInterface{
 	}
 
 	public function getRecords(){
-		$products = $this->product->with('images')->where('active', 1)->orderBy('created_at', 'desc')->get();
+		$products = $this->product->with('images')->where('active', 1)->orderBy('created_at', 'desc')->paginate(15);
 		return $products;
 	}
 
