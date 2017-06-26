@@ -14,7 +14,7 @@ class Product extends Model
     protected $fillable = [
     	'name', 'slug', 'width', 'height', 'depth',
     	'original', 'price', 'quantity', 'type',
-    	'description', 'active', 'year'
+    	'description', 'active', 'year', 'spotenvy'
     ];
 
     public function sluggable()

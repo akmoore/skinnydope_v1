@@ -81,6 +81,19 @@
 
 <fieldset>
     <div class="form-group">
+        {!! Form::label('spotenvy', 'StoreEnvy Link', ['class' => 'control-label col-sm-2']) !!}
+        <div class="col-sm-10">
+            {!! Form::text('spotenvy', null, ['class' => 'form-control']) !!}
+            <span class="help-block">Be sure that the StoreEnvy link is prepended with either "http://" or "https://".</span>
+            @if($errors->has('spotenvy'))
+                <span class="text-danger">{!! $errors->first('spotenvy') !!}</span>
+            @endif
+        </div>
+    </div>
+</fieldset>
+
+<fieldset>
+    <div class="form-group">
         {!! Form::label('year', 'Year *', ['class' => 'control-label col-sm-2']) !!}
         <div class="col-sm-10">
             {!! Form::text('year', null, ['class' => 'form-control']) !!}

@@ -33,7 +33,8 @@ class ProductRequest extends FormRequest
             'type' => 'required',
             'active' => 'required|sometimes',
             'year' => 'required|numeric',
-            'image' => 'required|sometimes'
+            'image' => 'required|sometimes',
+            'spotenvy' => 'url|nullable'
         ];
     }
 }

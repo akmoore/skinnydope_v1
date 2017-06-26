@@ -35,6 +35,7 @@
 		        	  	<li class="list-group-item"><b>Price:</b> ${{$product->price}}</li>
 		        	  	<li class="list-group-item"><b>Quantity:</b> {{$product->quantity}}</li>
 		        	  	<li class="list-group-item"><b>Type:</b> {{ucfirst($product->type)}}</li>
+		        	  	<li class="list-group-item"><b>StoreEnvy Link: </b> {{$product->spotenvy ? $product->spotenvy : 'N/A'}}</li>
 		        	  	<li class="list-group-item"><b>Orientation:</b> {{$product->portrait ? 'Portrait' : 'Landscape'}}</li>
 		        	  	<li class="list-group-item"><b>Description:</b> <br> {{$product->description ? $product->description : 'N/A'}}</li>
 		        	</ul>
