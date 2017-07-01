@@ -2,10 +2,13 @@
 	// console.log('Hello');
 	var menuBtn = $('.menu');
 	var cartBtn = $('.cartcount');
+	var contactBtn = $('nav#navBar a.contact');
 	var productsPane = $('.products-pane');
 	var cartPane = $('.cart-pane');
+	var contactPane = $('.contact-container');
 	var menuIsOpen = false;
 	var cartIsOpen = false;
+	var contactIsOpen = false;
 	// var clickInterval = 0;
 	var pPageImage = $('.ppage-image');
 	var intenseImages = document.querySelectorAll('.intense');
@@ -31,10 +34,24 @@
 			menuIsOpen = false;
 		}else{
 			if(cartIsOpen){toggleCart();};
+			if(contactIsOpen){toggleContact();};
 			productsPane.css({"transform": "translate3d(0%, 0px, 0px)"});
 			overlay.css('opacity', 1);
 			overlay.css('visibility', 'visible');
 			menuIsOpen = true;
+		}
+	}
+
+	function toggleContact(){
+		if(contactIsOpen){
+			contactPane.css({"transform": "translate3d(0px, -100%, 0px)"});
+			contactIsOpen = false;
+			console.log('contact is now close');
+		}else{
+			if(menuIsOpen){toggleMenu();};
+			contactPane.css({"transform": "translate3d(0px, 0%, 0px)"});
+			contactIsOpen = true;
+			console.log('contact is now open.');
 		}
 	}
 
@@ -67,6 +84,7 @@
 
 	menuBtn.on('click', toggleMenu);
 	cartBtn.on('click', toggleCart);
+	contactBtn.on('click', toggleContact);
 
 	$('.js-tilt').tilt({
 	    glare: true

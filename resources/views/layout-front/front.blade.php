@@ -11,6 +11,7 @@
             // 'braintree_url' => route('braintree.token'),
         ]) !!};
     </script>
+    <script src="https://use.fontawesome.com/5b34b27fc5.js"></script>
 </head>
 <body>
 	<div class="main-container">
@@ -19,11 +20,35 @@
 				<span class="label">MENU</span>
 			</div>
 			<span class="logo" data-href="/">SkinnyDope</span>
+			<a href="#" class="contact">Contact</a>
 			<!-- <aside class="cartcount">{{-- $cart->count() --}}<span class="label">CART</span></aside> -->
 		</nav>
 		@include('layout-front.partials.products')
 		<!-- @include('layout-front.partials.cart') -->
 		<div class="overlay"></div>
+	</div>
+	<div class="contact-container">
+		<ul>
+			<li>Jonathan Brown</li>
+			<li>
+				<a href="tel:5046152374">(504) 615-2374</a></li>
+			<li>
+				<a href="mailto:skinnydope1@yahoo.com">
+					skinnydope1@yahoo.com
+				</a>
+				
+			</li>
+			<li>
+				<a href="https://www.instagram.com/skinnydopeart/">
+					<i class="fa fa-instagram" aria-hidden="true"></i>
+					@skinnydopeart
+				</a>
+			</li>
+		</ul>
+		
+		
+		
+
 	</div>
 	<div class="content-container">
 		@yield('content')

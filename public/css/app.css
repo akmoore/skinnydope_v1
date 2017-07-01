@@ -52,6 +52,29 @@
 	top: 52px;
 }
 
+.contact-container {
+	position: absolute;
+	top: 52px;
+	width: 100%;
+	background-color: white;
+	z-index: 10;
+	font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+	transition: all 300ms cubic-bezier(.25,.46,.45,.94);
+	transform: translate3d(0px, -100%, 0px);
+}
+
+	.contact-container ul {
+		padding: 20px;
+		text-align: center;
+		list-style: none;
+		color: black;
+		letter-spacing: 2px;
+	}
+
+		.contact-container ul a {
+			color: #636b6f;
+		}
+
 /*Nav Bar*/
 nav#navBar .cartcount:hover span.label, nav#navBar .menu:hover span.label {
     opacity: 1;
@@ -236,7 +259,7 @@ nav#navBar>span {
 
 .cart-open nav#navBar .cartcount,.menu-open nav#navBar .cartcount {
     opacity: 0;
-    transition: opacity 250ms cubic-bezier(.645,.045,.355,1) 0
+    transition: opacity 250ms cubic-bezier(.645,.045,.355,1) 0;
 }
 
 .links{
@@ -247,6 +270,16 @@ nav#navBar>span {
 	height: 52px;
 	line-height: 52px;
 	font-family: AvenirNextLTPro-Regular,Arial,Helvetica;
+}
+
+nav#navBar a.contact {
+	position: absolute;
+    right: 20px;
+    text-decoration: none;
+    line-height: 52px;
+    text-transform: uppercase;
+    color: black;
+    cursor: pointer;
 }
 
 
