@@ -29,9 +29,10 @@
 	</div>
 	<div class="contact-container">
 		<ul>
-			<li>Jonathan Brown</li>
-			<li>
-				<a href="tel:5046152374">(504) 615-2374</a></li>
+			<li>Jonathan (Skinny) Brown</li>
+			<!-- <li>
+				<a href="tel:1234567890">(123) 456-7890</a>
+			</li> -->
 			<li>
 				<a href="mailto:skinnydope1@yahoo.com">
 					skinnydope1@yahoo.com
