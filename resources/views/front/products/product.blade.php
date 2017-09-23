@@ -17,7 +17,7 @@
 				<h6>Year</h6>
 				<p>{{$art->year}}</p>
 			@endif
-			<h6>Demensions</h6>
+			<h6>Dimensions</h6>
 			<p>{{$art->width}}" width | {{$art->height}}" height | {{$art->depth}}" depth</p>
 			<h6>Description</h6>
 			<p>
